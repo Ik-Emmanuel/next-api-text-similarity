@@ -18,7 +18,7 @@ export default function Home() {
             size="lg"
             className="three-d text-black dark:text-light-gold"
           >
-            Easily determine <br /> text similarity.
+            Easily Determine <br /> Text Similarity.
           </LargeHeading>
 
           <Paragraph className="max-w-xl lg:text-left">

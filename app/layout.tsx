@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/ui/toast";
-// import MobileMenu from "@/components/MobileMenu";
+import MobileMenu from "@/components/MobileMenu";
 import Providers from "@/components/Providers";
 import { cn } from "@/lib/utils";
 
@@ -31,7 +31,7 @@ export default function RootLayout({
           <Navbar />
           <Toaster position="bottom-right" />
 
-          {/* <MobileMenu /> */}
+          <MobileMenu />
 
           <main>{children}</main>
         </Providers>
