@@ -36,6 +36,7 @@ const Code: FC<CodeProps> = ({
           }
         }, 10);
 
+        // clean up to prevent memory leaks when component unmounts
         return () => clearInterval(intervalId);
       }, animationDelay || 150);
     }
