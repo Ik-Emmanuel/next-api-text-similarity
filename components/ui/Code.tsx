@@ -42,13 +42,13 @@ const Code: FC<CodeProps> = ({
     }
   }, [code, show, animated, animationDelay]);
 
-  // number of lines
+  // number of lines (count how many new lines are in text givenP)
   const lines = text.split(/\r\n|\r|\n/).length;
 
   const theme = applicationTheme === "light" ? lightTheme : darkTheme;
 
   return (
-    <Highlight {...defaultProps} code={text} language={language}>
+    <Highlight {...defaultProps} code={text} language={language} theme={theme}>
       {({ className, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={
