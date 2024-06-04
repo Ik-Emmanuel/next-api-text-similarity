@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import { Toaster } from "@/ui/toast";
+// import MobileMenu from "@/components/MobileMenu";
+import Providers from "@/components/Providers";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +20,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="en"
+      className={cn("bg-white text-slate-900 antialiased", inter.className)}
+    >
+      <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
+        <Providers>
+          {/* @ts-expect-error Server Component */}
+
+          <Navbar />
+          <Toaster position="bottom-right" />
+
+          {/* <MobileMenu /> */}
+
+          <main>{children}</main>
+        </Providers>
+
+        <div className="h-40 md:hidden" />
+      </body>
     </html>
   );
 }
