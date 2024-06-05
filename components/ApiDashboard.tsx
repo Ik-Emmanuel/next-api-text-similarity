@@ -8,6 +8,8 @@ import { Input } from "./ui/Input";
 import LargeHeading from "./ui/LargeHeading";
 import Paragraph from "./ui/Paragraph";
 import Table from "./ui/Table";
+import { User } from "lucide-react";
+import CopyButton from "./CopyButton";
 
 const ApiDashboard = async ({}) => {
   const user = await getServerSession(authOptions);
@@ -36,13 +38,27 @@ const ApiDashboard = async ({}) => {
 
   return (
     <div className="container flex flex-col gap-6">
-      <h1 className="font-bold text-3xl text-slate-600 dark:text-white">
+      <h1 className="md:text-center mb-6 font-bold text-3xl text-slate-600 dark:text-white">
         {" "}
-        Welcome back, {user.user.name}{" "}
+        <span className="flex gap-2 items-center r">
+          <User className="w-8 h-8 dark:text-light-gold" /> {user.user.name}{" "}
+        </span>
       </h1>
-      <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
-        <Paragraph>Your Current API key:</Paragraph>
-        <Input className="w-[30%] truncate" readOnly value={activeApiKey.key} />
+      <div className="  flex flex-col md:flex-row gap-4 justify-start md:justify-start items-start px-2">
+        <Paragraph className="">
+          Your API key:{" "}
+          <CopyButton
+            className=" right-0 top-2 left-0 animate-in fade-in duration-300"
+            valueToCopy={activeApiKey.key}
+          />
+        </Paragraph>
+
+        <Input
+          className="w-[30%] sm:w-[40%] truncate "
+          readOnly
+          value={activeApiKey.key}
+        />
+
         <ApiKeyOptions apiKeyKey={activeApiKey.key} />
       </div>
 
