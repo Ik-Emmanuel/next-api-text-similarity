@@ -9,13 +9,14 @@ import { Input } from "@/ui/Input";
 import LargeHeading from "./ui/LargeHeading";
 import Paragraph from "./ui/Paragraph";
 import { toast } from "./ui/toast";
+import { useRouter } from "next/navigation";
 
 interface RequestApiKeyProps {}
 
 const RequestApiKey: FC<RequestApiKeyProps> = ({}) => {
   const [isCreating, setIsCreating] = useState<boolean>(false);
   const [apiKey, setApiKey] = useState<string | null>(null);
-
+  const router = useRouter();
   async function createNewApiKey(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsCreating(true);
@@ -23,6 +24,7 @@ const RequestApiKey: FC<RequestApiKeyProps> = ({}) => {
     try {
       const generatedApiKey = await createApiKey();
       setApiKey(generatedApiKey);
+      router.refresh();
     } catch (err) {
       if (err instanceof Error) {
         toast({

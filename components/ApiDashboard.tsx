@@ -47,7 +47,7 @@ const ApiDashboard = async ({}) => {
         <Paragraph className="">
           Your API key:{" "}
           <CopyButton
-            className=" right-0 top-2 left-0 animate-in fade-in duration-300"
+            className=" right-0 top-2 left-0 animate-in fade-in duration-300  dark:text-light-gold"
             valueToCopy={activeApiKey.key}
           />
         </Paragraph>
