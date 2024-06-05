@@ -56,7 +56,6 @@ export async function GET(
             return NextResponse.json({ error: error.issues, createdApiKey: null }, { status: 400 })
         }
 
-        console.log(error)
 
         return NextResponse.json({ error: 'Internal Server Error', createdApiKey: null }, { status: 500 })
     }
