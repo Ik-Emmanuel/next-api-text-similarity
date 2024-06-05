@@ -23,7 +23,7 @@ const CopyButton: FC<CopyButtonProps> = ({
         navigator.clipboard.writeText(valueToCopy);
 
         toast({
-          title: "Copied",
+          title: "✅ Copied",
           message: "API key copied to clipboard",
           type: "success",
         });

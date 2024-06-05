@@ -80,7 +80,7 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKeyKey }) => {
             navigator.clipboard.writeText(apiKeyKey);
 
             toast({
-              title: "Copied",
+              title: "✅ Copied",
               message: "API key copied to clipboard",
               type: "success",
             });
