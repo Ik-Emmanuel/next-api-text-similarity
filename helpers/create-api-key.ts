@@ -1,7 +1,9 @@
 import { CreateApiData } from '@/types/api/key'
 
 export async function createApiKey() {
+  console.log("we here")
   const res = await fetch('/api/api-key/create')
+  console.log(res)
   const data = (await res.json()) as CreateApiData
 
   if (data.error || !data.createdApiKey) {

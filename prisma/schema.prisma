@@ -9,8 +9,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
@@ -41,7 +41,6 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -64,6 +63,7 @@ model ApiKey {
 
   requests ApiRequest[]
 
+  // means there should be no userid, key , enabled same  at any given time
   @@unique([userId, key, enabled])
 }
 

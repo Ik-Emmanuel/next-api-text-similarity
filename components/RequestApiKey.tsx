@@ -47,7 +47,7 @@ const RequestApiKey: FC<RequestApiKeyProps> = ({}) => {
   return (
     <div className="container md:max-w-2xl">
       <div className="flex flex-col gap-6 items-center">
-        <Key className="mx-auto h-12 w-12 text-gray-400" />
+        <Key className="mx-auto h-12 w-12 text-gray-400 dark:text-light-gold" />
         <LargeHeading className="text-center">
           Request your API key
         </LargeHeading>

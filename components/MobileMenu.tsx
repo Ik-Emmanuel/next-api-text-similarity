@@ -38,7 +38,11 @@ const MobileMenu = () => {
       <div className="shadow-2xl rounded-md outline outline-2 outline-white dark:outline-slate-900">
         <DropdownMenu open={open} onOpenChange={setOpen}>
           <DropdownMenuTrigger asChild onClick={() => setOpen((prev) => !prev)}>
-            <Button variant="outline" size="lg">
+            <Button
+              variant="outline"
+              className="dark:bg-light-gold dark:text-white"
+              size="lg"
+            >
               Menu
             </Button>
           </DropdownMenuTrigger>
